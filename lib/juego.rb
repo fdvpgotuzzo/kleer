@@ -1,7 +1,6 @@
 require_relative './dado.rb'
 
 class Juego
-	
 	def initialize dado
 		@dado = dado
 		@turno = "jugador 1"
@@ -12,11 +11,16 @@ class Juego
 	def atacar
         @valor_dado_1 = @dado.tirar
         @valor_dado_2 = @dado.tirar
+		siguiente_turno
 		@valor_dado_1 > @valor_dado_2
 	end
 
     def ultimos_dados
 		[@valor_dado_1, @valor_dado_2]
+	end
+
+	def turno
+		@turno
 	end
 
 	def siguiente_turno
