@@ -2,6 +2,7 @@ class Juego
 	
 	def initialize dado
 		@dado = dado
+		@turno = "jugador 1"
         @valor_dado_1 = nil
 		@valor_dado_2 = nil
 
@@ -16,5 +17,13 @@ class Juego
 
     def ultimos_dados
 		[@valor_dado_1, @valor_dado_2]
+	end
+
+	def siguiente_turno
+		if @turno == "jugador 1"
+			@turno = "jugador 2"
+		else
+			@turno = "jugador 1"
+		end			
 	end
 end
