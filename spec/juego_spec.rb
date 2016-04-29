@@ -38,12 +38,19 @@ describe "Juego" do
 	end
 
 	it "Comienza el juego con 2 paises por jugador, gana el jugador 1" do
-		dado = DadoMock.new([4, 1, 1, 4])
+		dado = DadoMock.new([4, 1])
 		juego = Juego.new dado, 2
 		juego.atacar
 		juego.atacar
-		juego.atacar
 		juego.gano?.should == true
+	end	
+
+	it "Comienza el juego con 2 paises por jugador, el jugador 1 ataca 2 veces seguidas y pasa turno al jugador 2" do
+		dado = Dado.new()
+		juego = Juego.new dado, 2
+		juego.atacar
+		juego.atacar
+		juego.turno.should == 2
 	end	
 
 end
