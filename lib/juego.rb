@@ -1,11 +1,10 @@
 class Juego
-	def initialize
-end
-	def atacar atacante, defensor
-		if atacante > defensor
-			"atacante"
-		else
-			"defensor"
-		end
+	
+	def initialize dado
+		@dado = dado
+	end
+
+	def atacar
+		@dado.tirar > @dado.tirar
 	end
 end

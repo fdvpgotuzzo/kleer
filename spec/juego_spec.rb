@@ -1,21 +1,21 @@
 require_relative('../lib/juego.rb')
+require_relative('../lib/dado-mock.rb')
 
 
 describe "Juego" do
 	
-	it "atacante tira dado 1 y defensor tira dado 6, atacante pierde" do
-		juego = Juego.new
-		juego.atacar(1,6).should == "defensor"
+	it "jugador 1 tira dado 1 y jugador 2 tira dado 6, jugador 1 pierde" do
+		juego = Juego.new (DadoMock.new(1, 6)) 
+		juego.atacar
 	end
 
-	it "atacante tira dado 6 y defensor tira dado 1, defensor pierde" do
-		juego = Juego.new
-		juego.atacar(6,1).should == "atacante"
+	it "jugador 1 tira dado 6 y jugador 2 tira dado 1, jugador 2 pierde" do
+		juego = Juego.new (DadoMock.new(6, 1)) 
+		juego.atacar
 	end
 
-	it "atacante tira dado 6 y defensor tira dado 6, atacante pierde" do
-		juego = Juego.new
-		juego.atacar(6,6).should == "defensor"
+	it "jugador 1 tira dado 6 y jugador 2 tira dado 6, jugador 1 pierde" do
+		juego = Juego.new (DadoMock.new(6, 6)) 
+		juego.atacar
 	end
-
 end
