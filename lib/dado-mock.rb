@@ -1,16 +1,15 @@
 class DadoMock
-	def initialize tirada1, tirada2
-		@tirada1 = tirada1
-		@tirada2 = tirada2
-		@tirada_par = false
+	def initialize tirada
+		@tirada = tirada
+		@index = 0
 	end
 
 	def tirar
-		@tirada_par = ! @tirada_par
-		if @tirada_par
-			@tirada1
-		else 
-			@tirada2
+		if @index >= @tirada.length
+			@index = 0
 		end
+		value = @tirada[@index]
+		@index += 1
+		value
 	end
 end

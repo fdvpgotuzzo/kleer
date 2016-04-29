@@ -51,4 +51,9 @@ class Juego
 	def paises_jugador2	
 		@paises_jugador_2
 	end
+
+	def gano?
+		@paises_jugador_1 == 0 || @paises_jugador_2 == 0
+	end	
+
 end
