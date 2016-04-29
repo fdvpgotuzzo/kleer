@@ -13,10 +13,9 @@ get '/' do
 end
 
 post '/atacar' do
-	@@juego.atacar
-	erb :juego
-end
-
-get "/ganador" do
-	erb :ganador
+	if @@juego.atacar
+		erb :ganador
+	else 
+		erb :juego
+	end
 end

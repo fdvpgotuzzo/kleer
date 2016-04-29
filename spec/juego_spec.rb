@@ -36,11 +36,4 @@ describe "Juego" do
         juego.paises_jugador1.should == 2
         juego.paises_jugador2.should == 2
 	end
-
-    it "jugador 1 tiene 2 paises, jugador 2 tiene 2 paises, jugador 1 le gana un pais a 2 y queda con 3" do
-		juego = Juego.new DadoMock.new(4, 3), 2
-		juego.atacar
-        juego.paises_jugador1.should == 3
-        juego.paises_jugador2.should == 1
-	end
 end

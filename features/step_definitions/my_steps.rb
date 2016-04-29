@@ -20,7 +20,6 @@ Then(/^el resultado del ataque es (\d+) y (\d+)$/) do |valor1, valor2|
 end
 
 Then(/^gana$/) do
-	visit "/ganador"
 	last_response.body.should =~ /Ganaste/m
 end
 
