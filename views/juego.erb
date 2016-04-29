@@ -2,3 +2,9 @@
 
 <p>
 Turno: Jugador 1
+
+Atacante <%= @@juego.ultimos_dados[0] %> - <%= @@juego.ultimos_dados[1] %> Defensor
+
+<form method="POST" action="/atacar" >
+	<input type="submit" value="Atacar">
+</form>

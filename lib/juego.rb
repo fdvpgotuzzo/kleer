@@ -1,3 +1,5 @@
+require_relative './dado.rb'
+
 class Juego
 	
 	def initialize dado
