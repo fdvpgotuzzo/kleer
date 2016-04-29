@@ -16,3 +16,7 @@ post '/atacar' do
 	@@juego.atacar
 	erb :juego
 end
+
+get "/ganador" do
+	erb :ganador
+end
