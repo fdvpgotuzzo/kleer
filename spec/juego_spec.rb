@@ -25,6 +25,10 @@ describe "Juego" do
         juego.ultimos_dados.should == [4, 3]
 	end
     
-    
+    it "jugador 1 ataco siguiente turno es de jugador 2" do
+		juego = Juego.new (Dado.new()) 
+		juego.atacar
+        juego.siguiente_turno.should == "jugador 2"
+	end
 
 end
