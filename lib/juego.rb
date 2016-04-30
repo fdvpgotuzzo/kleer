@@ -41,7 +41,6 @@ class Juego
 	end
 
 	def siguiente_turno
-		
 		if @turno == 1
 			@turno = 2
 			@ataques_x_turno = @paises_jugador_2
@@ -62,5 +61,9 @@ class Juego
 	def gano?
 		@paises_jugador_1 == 0 || @paises_jugador_2 == 0
 	end	
+
+	def ataques_de_turno
+		@ataques_x_turno
+	end
 
 end
