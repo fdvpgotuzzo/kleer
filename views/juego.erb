@@ -1,17 +1,17 @@
 <h1>Juego - Simil TEG</h1>
 
-<p>
-
-Atacante <%= @@juego.ultimos_dados[0] %> - <%= @@juego.ultimos_dados[1] %> Defensor<br>
-Cantidad de Paises <br>
+<h2><b>Turno: Jugador <%= @@juego.turno %></b></h2> 
+<br>
+<h2><b>Cantidad de Paises</b></h2>
 Jugador 1 : <%= @@juego.cant_paises_jugador_1	 %> <br>
-Jugador 2 : <%= @@juego.cant_paises_jugador_2	 %><br>
+Jugador 2 : <%= @@juego.cant_paises_jugador_2	 %> <br>
 <form method="POST" action="/atacar" >
 	<input type="submit" value="Atacar">
 </form>
+Atacante <%= @@juego.ultimos_dados[0] %> - <%= @@juego.ultimos_dados[1] %> Defensor<br>
 <br>
 <br>
 Ataques restantes: <%= @@juego.ataques_de_turno%>
 <br>
-Turno: Jugador <%= @@juego.turno %>
+
 
