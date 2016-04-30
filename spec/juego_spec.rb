@@ -33,8 +33,8 @@ describe "Juego" do
     
     it "Se empieza el juego con 2 paises por jugador, jugador 1 tiene 2 paises y jugador 2 tiene 2 paises" do
 		juego = Juego.new Dado.new(), 2
-        juego.paises_jugador1.should == 2
-        juego.paises_jugador2.should == 2
+        juego.cant_paises_jugador_1.should == 2
+        juego.cant_paises_jugador_2.should == 2
 	end
 
 	it "Comienza el juego con 2 paises por jugador, gana el jugador 1" do
@@ -63,5 +63,6 @@ describe "Juego" do
 		juego.atacar
 		juego.ataques_de_turno.should == 1
 	end	
+
 
 end
