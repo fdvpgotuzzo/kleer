@@ -7,13 +7,14 @@ get '/' do
 	if params[:mock] == "true"
 		@@juego = Juego.new DadoMock.new([params[:tirada1].to_i,params[:tirada2].to_i]), 1
 	else
-		@@juego = Juego.new Dado.new, 1
+		@@juego = Juego.new Dado.new, 4
 	end
 	erb :juego
 end
 
 post '/atacar' do
-	if @@juego.atacar
+    @@juego.atacar
+	if @@juego.gano?
 		erb :ganador
 	else 
 		erb :juego

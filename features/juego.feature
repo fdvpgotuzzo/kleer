@@ -13,3 +13,5 @@ Scenario: Ganar juego
 	Given Entro en el juego con el dado para tirar 5 y 2
 	When ataca
 	Then gana
+
+
