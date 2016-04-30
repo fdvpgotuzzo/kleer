@@ -1,14 +1,19 @@
 require_relative './dado.rb'
+require_relative './pais.rb'
 
 class Juego
-	def initialize dado, paises
+	def initialize dado, cant_paises
 		@dado = dado
 		@turno = 1
         @valor_dado_1 = nil
 		@valor_dado_2 = nil
-		@paises_jugador_1 = paises
-		@paises_jugador_2 = paises
-		@ataques_x_turno = paises
+		@paises_jugador_1 = []
+		@paises_jugador_2 = []
+		cant_paises.times {
+				@paises_jugador_1.push(Pais.new)
+				@paises_jugador_2.push(Pais.new)
+		}
+		@ataques_x_turno = cant_paises
 	end
 
 
@@ -18,11 +23,9 @@ class Juego
 		gano = @valor_dado_1 > @valor_dado_2
 		if gano
 			if @turno == 1
-				@paises_jugador_1 +=1
-				@paises_jugador_2 -=1
+				@paises_jugador_1.push(@paises_jugador_2.pop)
 			else
-				@paises_jugador_1 -=1
-				@paises_jugador_2 +=1
+				@paises_jugador_2.push(@paises_jugador_1.pop)
 			end
 		end
 		@ataques_x_turno -=1
@@ -43,23 +46,23 @@ class Juego
 	def siguiente_turno
 		if @turno == 1
 			@turno = 2
-			@ataques_x_turno = @paises_jugador_2
+			@ataques_x_turno = @paises_jugador_2.length
 		else
 			@turno = 1
-			@ataques_x_turno = @paises_jugador_1
+			@ataques_x_turno = @paises_jugador_1.length
 		end			
 	end
 
 	def paises_jugador1	
-		@paises_jugador_1
+		@paises_jugador_1.length
 	end
 
 	def paises_jugador2	
-		@paises_jugador_2
+		@paises_jugador_2.length
 	end
 
 	def gano?
-		@paises_jugador_1 == 0 || @paises_jugador_2 == 0
+		@paises_jugador_1.empty? || @paises_jugador_2.empty?
 	end	
 
 	def ataques_de_turno
