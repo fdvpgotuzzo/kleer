@@ -64,5 +64,13 @@ describe "Juego" do
 		juego.ataques_de_turno.should == 1
 	end	
 
+	it "Comienza el juego, el jugador 1 tiene pais 1, el jugardor 2 tiene pais 2" do
+		juego = Juego.new Dado.new(), 1
+		paises = juego.paises_jugador_1
+		paises[0].nombre.should == 1
+		paises2 = juego.paises_jugador_2
+		paises2[0].nombre.should == 2
+	end	
+
 
 end

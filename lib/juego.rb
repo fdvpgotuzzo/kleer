@@ -9,10 +9,10 @@ class Juego
 		@valor_dado_2 = nil
 		@paises_jugador_1 = []
 		@paises_jugador_2 = []
-		cant_paises.times {
-				@paises_jugador_1.push(Pais.new)
-				@paises_jugador_2.push(Pais.new)
-		}
+		cant_paises.times do |i|
+				@paises_jugador_1.push(Pais.new (i+1))
+				@paises_jugador_2.push(Pais.new (i+1+cant_paises))
+		end		
 		@ataques_x_turno = cant_paises
 	end
 
@@ -67,6 +67,14 @@ class Juego
 
 	def ataques_de_turno
 		@ataques_x_turno
+	end
+
+	def paises_jugador_1	
+		@paises_jugador_1
+	end
+
+	def paises_jugador_2	
+		@paises_jugador_2
 	end
 
 end
