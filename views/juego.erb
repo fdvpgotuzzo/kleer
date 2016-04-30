@@ -1,10 +1,30 @@
+<%= 
+def mostrar_paises jugador
+	paises = nil	
+	if (jugador == 1)	
+		paises = @@juego.paises_jugador_1
+	else 
+		paises = @@juego.paises_jugador_2
+	end
+	res = ""
+	paises.each_with_index do |pais,index|
+        if index == 0		
+		  res = "#{pais.nombre}"
+        else
+		  res = "#{res}, #{pais.nombre}"
+        end	
+	end	 
+	res
+end
+%>
+
 <h1>Juego - Simil TEG</h1>
 
 <h2><b>Turno: Jugador <%= @@juego.turno %></b></h2> 
 <br>
-<h2><b>Cantidad de Paises</b></h2>
-Jugador 1 : <%= @@juego.cant_paises_jugador_1	 %> <br>
-Jugador 2 : <%= @@juego.cant_paises_jugador_2	 %> <br>
+<h2><b>Paises</b></h2>
+Jugador 1: <%= mostrar_paises 1%> <br>
+Jugador 2: <%= mostrar_paises 2%> <br>
 <form method="POST" action="/atacar" >
 	<input type="submit" value="Atacar">
 </form>
@@ -13,5 +33,4 @@ Atacante <%= @@juego.ultimos_dados[0] %> - <%= @@juego.ultimos_dados[1] %> Defen
 <br>
 Ataques restantes: <%= @@juego.ataques_de_turno%>
 <br>
-
 

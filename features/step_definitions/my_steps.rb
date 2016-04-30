@@ -41,5 +41,9 @@ Then(/^Veo turno de jugador (\d+)$/) do |jugador|
 	last_response.body.should =~ /Turno: Jugador #{jugador}/m
 end
 
+Then(/^Veo jugador (\d+) tiene los paises (\d+) ,(\d+) ,(\d+)$/) do |jugador, pais1, pais2, pais3|
+  last_response.body.should =~ /Jugador #{jugador}: #{pais1}, #{pais2}, #{pais3}/m
+end
+
 
 

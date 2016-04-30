@@ -22,3 +22,8 @@ Scenario: Cambio de turno
 	Given Entro en el juego con 3 paises por jugador
 	When Ataco 3 veces 	
 	Then Veo turno de jugador 2
+
+Scenario: Visualizar paises
+	Given Entro en el juego con 3 paises por jugador
+	Then Veo jugador 1 tiene los paises 1 ,2 ,3
+
