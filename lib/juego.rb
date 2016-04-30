@@ -53,11 +53,11 @@ class Juego
 		end			
 	end
 
-	def paises_jugador1	
+	def cant_paises_jugador_1	
 		@paises_jugador_1.length
 	end
 
-	def paises_jugador2	
+	def cant_paises_jugador_2	
 		@paises_jugador_2.length
 	end
 
