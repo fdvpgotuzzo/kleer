@@ -26,6 +26,7 @@ end
 Jugador 1: <%= mostrar_paises 1%> <br>
 Jugador 2: <%= mostrar_paises 2%> <br>
 <form method="POST" action="/atacar" >
+	<input type="text" name="pais">
 	<input type="submit" value="Atacar">
 </form>
 Atacante <%= @@juego.ultimos_dados[0] %> - <%= @@juego.ultimos_dados[1] %> Defensor<br>
