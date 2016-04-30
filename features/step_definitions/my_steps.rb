@@ -31,5 +31,15 @@ Then(/^Veo (\d+) ataques restantes$/) do |ataques|
 	last_response.body.should =~ /Ataques restantes: #{ataques}/m
 end
 
+When(/^Ataco (\d+) veces$/) do |veces|
+	veces.to_i.times do  	
+		click_button("Atacar")
+	end
+end
+
+Then(/^Veo turno de jugador (\d+)$/) do |jugador|
+	last_response.body.should =~ /Turno: Jugador #{jugador}/m
+end
+
 
 

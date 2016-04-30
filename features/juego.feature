@@ -18,3 +18,7 @@ Scenario: Cantidad de Ataques por turno
 	Given Entro en el juego con 3 paises por jugador
  	Then Veo 3 ataques restantes
 
+Scenario: Cambio de turno
+	Given Entro en el juego con 3 paises por jugador
+	When Ataco 3 veces 	
+	Then Veo turno de jugador 2
