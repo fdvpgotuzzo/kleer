@@ -3,7 +3,7 @@ Given(/^Entro en el juego$/) do
 end
 
 Given(/^Entro en el juego con el dado para tirar (\d+) y (\d+)$/) do |valor1, valor2|
-	visit "/?mock=true&tirada1=#{valor1}&tirada2=#{valor2}"
+	visit "/?mock=true&tirada[]=#{valor1}&tirada[]=#{valor2}&paises=1"
 end
 
 Then(/^Es el turno del "(.*?)"$/) do |jugador|
@@ -23,6 +23,13 @@ Then(/^gana$/) do
 	last_response.body.should =~ /Ganaste/m
 end
 
+Given(/^Entro en el juego con (\d+) paises por jugador$/) do |cant_paises|
+	visit "/?mock=true&tirada[]=1&tirada[]=3&paises=#{cant_paises}"
+end
+
+Then(/^Veo (\d+) ataques restantes$/) do |ataques|  
+	last_response.body.should =~ /Ataques restantes: #{ataques}/m
+end
 
 
 

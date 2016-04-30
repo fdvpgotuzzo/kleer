@@ -5,7 +5,13 @@ require_relative './lib/dado-mock.rb'
 
 get '/' do
 	if params[:mock] == "true"
-		@@juego = Juego.new DadoMock.new([params[:tirada1].to_i,params[:tirada2].to_i]), 1
+        paises = params[:paises].to_i
+        tirada_string = params[:tirada]
+		tirada_i =[]
+ 		tirada_string.each do |val|
+			tirada_i.push val.to_i
+		end
+		@@juego = Juego.new DadoMock.new(tirada_i), paises
 	else
 		@@juego = Juego.new Dado.new, 4
 	end

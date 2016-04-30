@@ -14,4 +14,7 @@ Scenario: Ganar juego
 	When ataca
 	Then gana
 
+Scenario: Cantidad de Ataques por turno
+	Given Entro en el juego con 3 paises por jugador
+ 	Then Veo 3 ataques restantes
 
