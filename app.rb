@@ -19,7 +19,7 @@ get '/' do
 end
 
 post '/atacar' do
-    @@juego.atacar
+    @@juego.atacar params[:pais].to_i
 	if @@juego.gano?
 		erb :ganador
 	else 

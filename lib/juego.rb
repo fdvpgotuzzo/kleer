@@ -17,15 +17,15 @@ class Juego
 	end
 
 
-	def atacar
+	def atacar nombre_pais
         @valor_dado_1 = @dado.tirar
         @valor_dado_2 = @dado.tirar
 		gano = @valor_dado_1 > @valor_dado_2
 		if gano
 			if @turno == 1
-				@paises_jugador_1.push(@paises_jugador_2.pop)
+				@paises_jugador_1.push(@paises_jugador_2.delete_at(@paises_jugador_2.index{|p| p.nombre == nombre_pais}))
 			else
-				@paises_jugador_2.push(@paises_jugador_1.pop)
+				@paises_jugador_2.push(@paises_jugador_1.delete_at(@paises_jugador_1.index{|p| p.nombre == nombre_pais}))
 			end
 		end
 		@ataques_x_turno -=1

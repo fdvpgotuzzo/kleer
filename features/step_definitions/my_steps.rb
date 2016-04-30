@@ -6,11 +6,15 @@ Given(/^Entro en el juego con el dado para tirar (\d+) y (\d+)$/) do |valor1, va
 	visit "/?mock=true&tirada[]=#{valor1}&tirada[]=#{valor2}&paises=1"
 end
 
+When(/^ataca al pais (\d+)$/) do |arg1|
+end
+
 Then(/^Es el turno del "(.*?)"$/) do |jugador|
   	last_response.body.should =~ /#{jugador}/m
 end
 
 When(/^ataca$/) do
+  	fill_in("pais", :with => 2)
      click_button("Atacar")
 end
 
