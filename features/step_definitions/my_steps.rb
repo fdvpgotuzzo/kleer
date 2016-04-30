@@ -38,9 +38,12 @@ Then(/^Veo (\d+) ataques restantes$/) do |ataques|
 end
 
 When(/^Ataco (\d+) veces$/) do |veces|
-	veces.to_i.times do  	
+  	fill_in("pais", :with => 4)
 		click_button("Atacar")
-	end
+  	fill_in("pais", :with => 5)
+		click_button("Atacar")
+  	fill_in("pais", :with => 6)
+		click_button("Atacar")
 end
 
 Then(/^Veo turno de jugador (\d+)$/) do |jugador|

@@ -18,6 +18,15 @@ class Juego
 
 
 	def atacar nombre_pais
+		if @turno == 1
+			if ! @paises_jugador_2.any? {|p| p.nombre == nombre_pais}
+				return false
+			end
+		else
+			if ! @paises_jugador_1.any? {|p| p.nombre == nombre_pais}
+				return false
+			end
+		end
         @valor_dado_1 = @dado.tirar
         @valor_dado_2 = @dado.tirar
 		gano = @valor_dado_1 > @valor_dado_2
